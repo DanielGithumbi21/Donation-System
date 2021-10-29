@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css"
 
 const Navbar = () => {
@@ -21,9 +22,28 @@ const Navbar = () => {
                             <a className="nav-link disabled">CONTRIBUTIONS</a>
                             </li>
                         </ul>
-                        <div className="d-flex">
-                            <button className="btn btn-outline-success">REGISTER</button>
-                        </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="d-flex">
+                            <Link to='/donor/sign'>
+                            <button className="btn btn-outline-success mb-2">REGISTER</button>
+                            </Link>
+                            </div>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                <Link to='/donor/sign'>
+                                    <button className="btn btn-primary m-2">Donor</button>
+                                </Link>
+                                </li>
+                                <li>
+                                <Link to='/donee/sign'>
+                                    <button className="btn btn-primary m-2">Donee</button>
+                                </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        
                         </div>
                     </div>
                 </nav>
