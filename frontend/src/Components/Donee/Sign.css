@@ -1,0 +1,22 @@
+.sign {
+    margin-top: 2%;
+    padding: 20px !important;
+    width: 40%;
+}
+.sign .card {
+    padding: 30px;
+    background-color: transparent;
+}
+.sign .card h5 {
+    margin-bottom: 40px !important;
+}
+body {
+    background-color: white;
+}
+@media screen and (max-width:920px) {
+    .sign {
+        margin-top: 2%;
+        padding: 20px !important;
+        width: 100%;
+    }
+}
