@@ -1,0 +1,15 @@
+.navbar {
+    padding: 20px;
+}
+.navbar-nav {
+    margin-left: 40%;
+}
+.nav-item a {
+    color: rgb(45, 218, 145) !important;
+}
+.nav-item  {
+    padding-left: 40px;
+}
+.navbar-brand {
+    color: rgb(45, 218, 145) !important;
+}
