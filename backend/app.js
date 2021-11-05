@@ -14,7 +14,7 @@ const db = require('./config/db').MongoURI;
 const { MongoURI } = require('./config/db');
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/donation", {useNewUrlParser: true, useUnifiedTopology: true }).then(console.log('Connected to MongoDB Atlas')).catch(err => console.log(err))
+mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true }).then(console.log('Connected to MongoDB Atlas')).catch(err => console.log(err))
 
 app.use(cors());
 app.use(logger('dev'));
