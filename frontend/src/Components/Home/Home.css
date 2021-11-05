@@ -1,6 +1,4 @@
-body {
-    background-color: rgb(205, 223, 221);
-}
+
 .home {
     text-align: center;
     margin-top: 14%;
@@ -8,4 +6,11 @@ body {
 }
 .home .btn {
     color: green;
+}
+@media screen and (max-width:920px) {
+    .home {
+        text-align: center;
+        margin-top: 50%;
+        width: 70%;
+    }
 }

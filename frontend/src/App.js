@@ -1,11 +1,18 @@
+import React,{ useEffect } from 'react';
 import Navbar from './Components/Navbar/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import Home from './Components/Home/Home';
 import DoneeSign from './Components/Donee/Sign';
 import DonorSign from './Components/Donor/Sign';
+import {keepTheme} from './utils/themes'
+
 
 function App() {
+
+  useEffect (() => {
+    keepTheme()
+  })
   return (
    <div>
      <Router>
