@@ -32,7 +32,7 @@ const DonorSign = () => {
                     setErrors(json.message)
                 } else {
                     localStorage.setItem("Donorprofile",JSON.stringify({json}))
-                    history.push("/")
+                    history.push("/donor/home")
                 }
             })
         }else {
@@ -53,7 +53,7 @@ const DonorSign = () => {
                 
                 } else {
                     localStorage.setItem("Donorprofile",JSON.stringify({json}))
-                    history.push("/")
+                    history.push("/donor/home")
                 }
             })
         }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-import "./Navbar.css"
-import './toggle.css';
+import { Link, useHistory, useLocation } from "react-router-dom";
+import "../Navbar/Navbar.css"
+import '../Navbar/toggle.css';
 import { setTheme } from '../../utils/themes';
 
 function Toggle() {
@@ -52,7 +52,18 @@ function Toggle() {
     )
 }
 
-const Navbar = () => {
+const DonorNavbar = () => {
+    const location = useLocation();
+    const history = useHistory();
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('Donorprofile')));
+    useEffect (() => {
+        // const token =user?.token;
+        setUser(JSON.parse(localStorage.getItem('Donorprofile')))
+    },[location])
+    const onClick = () => {
+        localStorage.clear("Donorprofile")
+        history.push("/")
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -72,27 +83,12 @@ const Navbar = () => {
                             <li className="nav-item">
                             <a className="nav-link disabled">CONTRIBUTIONS</a>
                             </li>
+                            <li className="nav-item">
+                                <h6 className="nav-link">Welcome, {user.json.result.donor}</h6>
+                            </li>
                         </ul>
-                        <li style={{listStyleType:"none"}} class="nav-item dropdown">
-                            <a className="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div className="d-flex">
-                            <Link to='/donor/sign'>
-                            <button className="btn btn-outline-success mb-2">REGISTER</button>
-                            </Link>
-                            </div>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                <Link to='/donor/sign'>
-                                    <button className="btn btn-primary m-2">Donor</button>
-                                </Link>
-                                </li>
-                                <li>
-                                <Link to='/donee/sign'>
-                                    <button className="btn btn-primary m-2">Donee</button>
-                                </Link>
-                                </li>
-                            </ul>
+                        <li style={{listStyleType:"none"}}>
+                            <button className='btn btn-outline-danger btn-md' onClick={onClick}>Logout</button>
                         </li>
                         <li style={{listStyleType:"none"}}><Toggle/></li>
                         
@@ -103,4 +99,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default DonorNavbar;

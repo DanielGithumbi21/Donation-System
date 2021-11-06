@@ -5,6 +5,7 @@ import "./Sign.css"
 const DoneeSign = () => {
     const initialState = {donee:'',email:'',telephone:'',password:''}
     const [isSignUp,setIsSignUp] = useState(true);
+    const [isLoading,setIsLoading] = useState(false)
     const [formData, setFormData] = useState(initialState)
     const [errors,setErrors] = useState();
     const history = useHistory ();
@@ -18,6 +19,7 @@ const DoneeSign = () => {
     const onSubmit = (e) => {
         e.preventDefault()
         if (isSignUp) {
+            setIsLoading(true)
             fetch ("http://localhost:5000/api/donee/register", {
                 method:"POST",
                 headers:{
@@ -31,11 +33,12 @@ const DoneeSign = () => {
                 if (json.message) {
                     setErrors(json.message)
                 } else {
-                    localStorage.setItem("Donorprofile",JSON.stringify({json}))
-                    history.push("/")
+                    localStorage.setItem("Doneeprofile",JSON.stringify({json}))
+                    history.push("/donee/home")
                 }
             })
         }else {
+            setIsLoading(true)
             fetch ("http://localhost:5000/api/donee/login", {
                 method:"POST",
                 headers:{
@@ -52,8 +55,8 @@ const DoneeSign = () => {
                         
                 
                 } else {
-                    localStorage.setItem("Donorprofile",JSON.stringify({json}))
-                    history.push("/")
+                    localStorage.setItem("Doneeprofile",JSON.stringify({json}))
+                    history.push("/donee/home")
                 }
             })
         }
@@ -72,7 +75,7 @@ const DoneeSign = () => {
             {isSignUp? <h5 className="text-center mb-3">Donee Registration</h5>:<h5 className="text-center mb-3">Donee Login</h5>}
             {isSignUp?
             <div>
-                <form >
+                <form onSubmit={onSubmit} >
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Name</label>
                     <input onChange={handleChange} type="text" name="donee" className="form-control" id="exampleFormControlInput1" placeholder="john doe"/>
@@ -89,9 +92,15 @@ const DoneeSign = () => {
                     <label for="exampleFormControlInput1" className="form-label">Password</label>
                     <input onChange={handleChange} type="password" name="password" className="form-control" id="exampleFormControlInput1" />
                 </div>
-                <div className="text-center">
-                <button className="btn btn-md btn-primary mb-3">Register</button>
-                </div>
+                {
+                    isLoading?
+                    <div className="text-center">
+                    <button className="btn btn-md btn-primary mb-3" disabled={true}>Registering</button>
+                    </div>:
+                    <div className="text-center">
+                    <button className="btn btn-md btn-primary mb-3">Register</button>
+                    </div>
+                }
                 <div className="text-center">
                 <button className="btn btn-md btn-outline" onClick={switchmode}>Already have an account? click here to login</button>
                 </div>
@@ -107,9 +116,15 @@ const DoneeSign = () => {
                 <label for="exampleFormControlInput1" className="form-label">Password</label>
                 <input onChange={handleChange} type="password" name="password" className="form-control" id="exampleFormControlInput1" />
             </div>
-            <div className="text-center">
-            <button className="btn btn-md btn-primary mb-3">Login</button>
-            </div>
+            {
+                    isLoading?
+                    <div className="text-center">
+                    <button className="btn btn-md btn-primary mb-3" disabled={true} >Logging in</button>
+                    </div>:
+                    <div className="text-center">
+                    <button className="btn btn-md btn-primary mb-3">Login</button>
+                    </div>
+                }
             <div className="text-center">
             <button className="btn btn-md btn-outline" onClick={switchmode}>Don't have an account? click here to Register</button>
             </div>
