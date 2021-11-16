@@ -61,7 +61,7 @@ const DoneeNavbar = () => {
         setUser(JSON.parse(localStorage.getItem('Doneeprofile')))
     },[location])
     const onClick = () => {
-        localStorage.clear("Doneeprofile")
+        localStorage.removeItem("Doneeprofile")
         history.push("/")
     }
     return (
