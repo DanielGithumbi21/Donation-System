@@ -13,10 +13,24 @@
 body {
     background-color: white;
 }
+.home {
+    margin-top: 30px;
+}
+.donation {
+    width: 45%;
+    margin-top: 30px;
+    padding: 20px;
+}
+.donation h5 {
+    text-align: center;
+}
 @media screen and (max-width:920px) {
     .sign {
         margin-top: 2%;
         padding: 20px !important;
+        width: 100%;
+    }
+    .donation {
         width: 100%;
     }
 }

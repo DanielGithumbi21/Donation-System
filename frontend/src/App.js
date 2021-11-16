@@ -7,7 +7,6 @@ import {keepTheme} from './utils/themes'
 function App() {
 
   const Home = lazy (() => import ('./Components/Home/Home'))
-  const Navbar = lazy (() => import ('./Components/Navbar/Navbar'))
   const DoneeSign = lazy (() => import ('./Components/Donee/Sign'))
   const DonorSign = lazy (() => import ('./Components/Donor/Sign'))
   const DoneeHome = lazy (() => import ('./Components/Donee/Home'))
