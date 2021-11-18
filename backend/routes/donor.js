@@ -18,4 +18,18 @@ router.route('/register')
 router.route('/login')
   .post(donorController.loginDonor)
 
+/* 
+  GET VERIFIED DONATION REQUESTS SETUP
+*/
+
+// router.route('/verified')
+
+/* 
+  MAKE DONATION TO DONEE BY ID SETUP
+*/
+
+router.route('/donate/:id')
+  .get(donorController.getVerified)
+  .patch(donorController.patchDonate)
+  
 module.exports = router;

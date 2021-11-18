@@ -6,10 +6,6 @@ const doneeSchema = mongoose.Schema({
   telephone: String,
   email: String,
   password: String,
-  verification: {
-    type: Boolean,
-    default: false
-  },
   createdAt: {
     type: Date,
     default: Date.now

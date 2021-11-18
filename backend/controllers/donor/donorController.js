@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const Donor = require('../../models/donor');
+const Request = require('../../models/donation');
 
 /* 
   REGISTER DONOR SETUP
@@ -59,6 +60,44 @@ exports.loginDonor = async (req, res, next) => {
       result:donor
     })
 
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+/* 
+  GET VERIFIED DONATION REQUESTS SETUP
+*/
+
+exports.getVerified = (req, res, next) => {
+  try {
+    Request.find({ verification: true })
+      .populate('donee', ['donee', 'email', 'telephone'])
+      .then((verified) => {
+        return res.status(200).json(verified)
+      })
+      .catch((error) => console.error(error))
+    } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+/* 
+  MAKE DONATION TO DONEE BY ID SETUP
+*/
+
+exports.patchDonate = async (req, res, next) => {
+  try {
+
+    await Request.updateOne({ donor: null, verification: true },{ $set: { donor: req.params.id } }, { new: true, multi:true })
+      .then(result => {
+        if(!result) return res.json({ message: 'Dontion Request does not exist' })
+        return res.status(200).json(result)
+      })
+      .catch(err => res.json(err))
+      // 
   } catch (error) {
     console.error(error);
     next(error);

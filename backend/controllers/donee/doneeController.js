@@ -1,6 +1,8 @@
 const bcrypt = require('bcryptjs');
 
 const Donee = require('../../models/donee');
+const Request = require('../../models/donation');
+
 
 /* 
   REGISTER DONEE SETUP
@@ -59,6 +61,41 @@ exports.loginDonee = async (req, res, next) => {
       result:donee
     })
 
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+/* 
+  GET AND MAKE DONATION REQUEST BY ID SETUP
+*/
+
+exports.getRequest = (req, res, next) => {
+  try {
+    Request.find({'donee': req.params.id})
+      .then((request) => {
+        return res.status(200).json(request)
+      })
+      .catch((error) => console.error(error))
+    } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+exports.makeRequest = async (req, res, next) => {
+  try {
+
+    // let { title, description, donees } = req.body
+    
+    if(req.params.id != String(req.body.donee)) return res.json({ message: 'This Donee is not related to the donation request being made' })
+
+    let request = await new Request(req.body)
+    request.save()
+      .then((result) => res.status(201).json({ result }))
+      .catch(err => console.error(err))
+      
   } catch (error) {
     console.error(error);
     next(error);

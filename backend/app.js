@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const donorRouter = require('./routes/donor');
 const doneeRouter = require('./routes/donee');
+const adminRouter = require('./routes/admin');
 
 const app = express();
 
@@ -25,5 +26,6 @@ app.use(cookieParser());
 
 app.use('/api/donor', donorRouter);
 app.use('/api/donee', doneeRouter);
+app.use('/api/admin', adminRouter);
 
 module.exports = app;
