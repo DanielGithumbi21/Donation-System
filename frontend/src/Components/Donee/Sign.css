@@ -13,11 +13,9 @@
 body {
     background-color: white;
 }
-.home {
-    margin-top: 30px;
-}
+
 .donation {
-    width: 45%;
+    width: 100%;
     margin-top: 30px;
     padding: 20px;
 }

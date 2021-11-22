@@ -2,6 +2,8 @@ import React,{ useEffect,Suspense,lazy } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import {keepTheme} from './utils/themes'
+import AdminSign from './Components/Admin/Sign';
+import AdminHome from './Components/Admin/home';
 
 
 function App() {
@@ -21,10 +23,12 @@ function App() {
      <Router>
        <Suspense fallback = {<div>loading....</div>}>
        <Route path="/" exact component={Home}/>
-       <Route path="/donee/sign" component={DoneeSign}/>
-       <Route path="/donee/home" component={DoneeHome}/>
+       <Route path="/donee/sign" exact component={DoneeSign}/>
+       <Route path="/donee/home" exact component={DoneeHome}/>
        <Route path="/donor/sign" component={DonorSign}/>
        <Route path="/donor/home" component={DonorHome}/>
+       <Route path="/admin" exact component={AdminSign}/>
+       <Route path="/admin/home" component={AdminHome}/>
        </Suspense>
      </Router>
      

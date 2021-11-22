@@ -1,45 +1,42 @@
-import React,{useEffect,useState} from 'react'
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import React,{useState,useEffect} from 'react'
+import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import DoneeNavbar from './Navbar'
+import axios from "axios"
 import "./Sign.css"
 
 const DoneeHome = () => {
-    const location = useLocation
+    const location =useLocation ()
+    const history = useHistory()
+    const initialState = {name:'',description:""}
+    const [formData, setFormData] = useState(initialState)
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('Doneeprofile')));
     useEffect (() => {
         // const token =user?.token;
         setUser(JSON.parse(localStorage.getItem('Doneeprofile')))
     },[location])
     const handleChange = (e) => {
-
+        setFormData({...formData,[e.target.name]:e.target.value})
     }
 
-    const onSubmit = () => {
-
+    const onSubmit = (e) => {
+        e.preventDefault ()
+        axios.post (`http://localhost:5000/api/donee/request/${user.json.result._id}`,formData)
+        .then((data) => console.log(data))
     }
     return (
         <div>
             <DoneeNavbar/>
-            <div className="container home">
-              <h5>Wecome, {user.json.result.donee}</h5>
+            <div className="container sign">
               <div className="container donation">
                   <h5 className="mb-3">Make A donation Request</h5>
                   <form onSubmit={onSubmit} >
                 <div className="mb-3">
-                    <label for="exampleFormControlInput1" className="form-label">Name</label>
-                    <input onChange={handleChange} type="text" name="donee" className="form-control" id="exampleFormControlInput1" placeholder="john doe"/>
+                    <label for="exampleFormControlInput1" className="form-label">Title</label>
+                    <input onChange={handleChange} type="text" name="title" className="form-control" id="exampleFormControlInput1" placeholder="Money help"/>
                 </div>
                 <div className="mb-3">
-                    <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                    <input onChange={handleChange} type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-                </div>
-                <div className="mb-3">
-                    <label for="exampleFormControlInput1" className="form-label">Telephone</label>
-                    <input onChange={handleChange} type="text" name="telephone" className="form-control" id="exampleFormControlInput1" placeholder="your phone number"/>
-                </div>
-                <div className="mb-3">
-                    <label for="exampleFormControlInput1" className="form-label">Password</label>
-                    <input onChange={handleChange} type="password" name="password" className="form-control" id="exampleFormControlInput1" />
+                    <label for="exampleFormControlTextarea1" className="form-label">description</label>
+                    <textarea className="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             
                 <div className="text-center">
