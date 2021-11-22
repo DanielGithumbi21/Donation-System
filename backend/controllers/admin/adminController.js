@@ -1,6 +1,8 @@
 const bcrypt = require('bcryptjs');
 
 const Admin = require('../../models/admin');
+const Donor = require('../../models/donor');
+const Donee = require('../../models/donee');
 const Request = require('../../models/donation');
 
 
@@ -68,6 +70,22 @@ exports.loginAdmin = async (req, res, next) => {
 }
 
 /* 
+  GET ALL DONATION REQUESTS SETUP
+*/
+
+exports.getAllDonations = async (req, res, next) => {
+  try {
+    let donations = await Request.find()
+
+    return res.status(200).json(donations)
+
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+/* 
   GET AND VERIFY DONATION REQUEST BY ID SETUP
 */
 
@@ -95,6 +113,82 @@ exports.verifyRequest = async (req, res, next) => {
       })
       .catch(err => res.json(err))
       
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+/*
+  UPDATE AND DELETE DONOR BY ID
+*/
+
+exports.patchDonor = async (req, res, next) => {
+  try {
+
+    await Donor.updateOne({ _id: req.params.id },{ $set: { 
+      'donor': req.body.donor,
+      'email': req.body.email
+    } })
+      .then(result => {
+        if(!result) return res.json({ message: 'Donor does not exist' })
+        return res.status(200).json(result)
+      })
+      .catch(err => res.json(err))
+
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+exports.deleteDonor = async (req, res, next) => {
+  try {
+
+    await Donor.deleteOne({ _id: req.params.id })
+      .then((result) => {
+        if(!result) return res.json({ message: 'Donor does not exist' })
+        return res.status(200).json({ message: 'Donor has been deleted' })
+      })
+
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+/*
+  UPDATE AND DELETE DONEE BY ID
+*/
+
+exports.patchDonee = async (req, res, next) => {
+  try {
+
+    await Donee.updateOne({ _id: req.params.id },{ $set: { 
+      'donee': req.body.donee,
+      'email': req.body.email
+    } })
+      .then(result => {
+        if(!result) return res.json({ message: 'Donee does not exist' })
+        return res.status(200).json(result)
+      })
+      .catch(err => res.json(err))
+
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+exports.deleteDonee = async (req, res, next) => {
+  try {
+
+    await Donee.deleteOne({ _id: req.params.id })
+      .then((result) => {
+        if(!result) return res.json({ message: 'Donee does not exist' })
+        return res.status(200).json({ message: 'Donee has been deleted' })
+      })
+
   } catch (error) {
     console.error(error);
     next(error);
