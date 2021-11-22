@@ -75,13 +75,13 @@ const AdminNavbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">HOME</a>
+                            <a className="nav-link active" aria-current="page" href="/admin/home">HOME</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">DONORS</a>
+                            <a className="nav-link" href="/admin/donors">DONORS</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link disabled">DONEES</a>
+                            <a className="nav-link" href="/admin/donee">DONEES</a>
                             </li>
                             <li className="nav-item">
                             <a className="nav-link disabled">DONATIONS</a>

@@ -1,17 +1,17 @@
 .theme-dark {
-    --dark-text: #ececec;
+    --dark-text: #ffffff;
     --light-text: #F9F8F8;  
     --dark-background: #000000;
-    --light-background: #fafafa;
+    --light-background: #ffffff;
     --accent: #B8DBD9;
     --button-border: #B8DBD9;
   }
 
   .theme-light {
-    --dark-text: #4b5e53;
+    --dark-text: #000000;
     --light-text: #ffffff;
     --dark-background: #DBE7E4;
-    --light-background: #EDDCD2;
+    --light-background: #ffffff;
     --accent: #DBE7E4;
     --button-border: #5E4B56;
   }

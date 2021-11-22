@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 import {keepTheme} from './utils/themes'
 import AdminSign from './Components/Admin/Sign';
 import AdminHome from './Components/Admin/home';
+import AdminDonors from './Components/Admin/donors';
+import AdminDonees from './Components/Admin/Donee';
 
 
 function App() {
@@ -29,6 +31,9 @@ function App() {
        <Route path="/donor/home" component={DonorHome}/>
        <Route path="/admin" exact component={AdminSign}/>
        <Route path="/admin/home" component={AdminHome}/>
+       <Route path="/admin/donors" component={AdminDonors}/>
+       <Route path="/admin/donee" component={AdminDonees}/>
+
        </Suspense>
      </Router>
      

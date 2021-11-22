@@ -1,0 +1,14 @@
+.admin {
+    margin-top: 2%;
+    padding: 20px !important;
+    width: 80%;
+}
+.admin .card {
+    padding: 30px;
+    background-color: rgb(26, 25, 25);
+    border-width: 2px;
+    border-color: blue;
+}
+.admin .card h5 {
+    margin-bottom: 40px !important;
+}

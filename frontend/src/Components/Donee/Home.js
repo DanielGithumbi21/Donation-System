@@ -7,7 +7,7 @@ import "./Sign.css"
 const DoneeHome = () => {
     const location =useLocation ()
     const history = useHistory()
-    const initialState = {name:'',description:""}
+    const initialState = {title:'',description:""}
     const [formData, setFormData] = useState(initialState)
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('Doneeprofile')));
     useEffect (() => {
@@ -19,8 +19,13 @@ const DoneeHome = () => {
     }
 
     const onSubmit = (e) => {
+        const post = {
+            title:formData.title,
+            description:formData.description,
+            donee:user.json.result._id
+        }
         e.preventDefault ()
-        axios.post (`http://localhost:5000/api/donee/request/${user.json.result._id}`,formData)
+        axios.post (`http://localhost:5000/api/donee/request/${user.json.result._id}`,post)
         .then((data) => console.log(data))
     }
     return (
