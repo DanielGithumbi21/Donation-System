@@ -32,8 +32,8 @@ const AdminHome = () => {
                         data.map (donation => (
                             <div class="card" style ={{width:"20rem"}}>
                             <img src="https://images.pexels.com/photos/6646865/pexels-photo-6646865.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="..."/>
+                            <h5 class="card-header mt-3">{donation.title}</h5>
                             <div class="card-body">
-                              <h5 class="card-title">{donation.title}</h5>
                               <p class="card-text">{donation.description}</p>
                               {donation.verification === false?
                               <div className='text-center mb-3'>
