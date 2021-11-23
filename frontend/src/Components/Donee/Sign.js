@@ -45,6 +45,7 @@ const DoneeSign = () => {
                     'Content-Type':'application/json'
                 },
                 body:JSON.stringify (formData)
+                
             })
             .then(res => res.json())
             .then(json => {

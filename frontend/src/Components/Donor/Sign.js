@@ -101,11 +101,11 @@ const DonorSign = () => {
             <form onSubmit={onSubmit} >
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                <input type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                <input type="email" name="email"onChange={handleChange} className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Password</label>
-                <input type="password" name="password" className="form-control" id="exampleFormControlInput1" />
+                <input type="password" onChange={handleChange} name="password" className="form-control" id="exampleFormControlInput1" />
             </div>
             <div className="text-center">
             <button className="btn btn-md btn-primary mb-3">Login</button>

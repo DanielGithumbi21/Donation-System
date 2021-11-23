@@ -41,7 +41,7 @@ const DoneeHome = () => {
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlTextarea1" className="form-label">description</label>
-                    <textarea className="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea className="form-control"onChange={handleChange} name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             
                 <div className="text-center">

@@ -1,8 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import AdminNavbar from './Navbar'
 import "./admin.css"
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const AdminHome = () => {
+    const history = useHistory ()
     const [data,setData] = useState([])
     useEffect (() => {
         getData ()
@@ -15,6 +18,11 @@ const AdminHome = () => {
         setData(result)
     }
 
+    const onClick = (id) => {
+        axios.patch(`http://localhost:5000/api/admin/request/${id}`)
+        history.go(0)
+    }
+
     return (
         <div>
             <AdminNavbar/>
@@ -22,20 +30,22 @@ const AdminHome = () => {
                 <div className="row" style ={{display:"flex"}}>
                     {
                         data.map (donation => (
-                            <div className='card' style ={{width:"18rem"}}>
-                                <p className='lead'>A donation request with id, {donation._id},<br/> was made by donee id {donation.donee}</p>
-                                <div style ={{display:"flex"}}>
-                                <h5>Title: </h5><p className='lead'> {donation.title}</p>
-                                </div>
-                                <div style ={{display:"flex"}}>
-                                <h5>Description:  </h5><p className='lead'>{donation.description}</p>
-                                </div>
-                                <div className='text-center'>
-                                    <button className="btn-info btn btn-md">Verify</button>
-                                </div>
-
-                                
+                            <div class="card" style ={{width:"20rem"}}>
+                            <img src="https://images.pexels.com/photos/6646865/pexels-photo-6646865.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                              <h5 class="card-title">{donation.title}</h5>
+                              <p class="card-text">{donation.description}</p>
+                              {donation.verification === false?
+                              <div className='text-center mb-3'>
+                              <button className="btn-info btn btn-md" onClick={(()=> onClick(donation._id))} >Verify</button>
+                              </div>:
+                              <div className='text-center mb-3'>
+                              <button className="btn-success btn btn-md" disabled={true} >Verified</button>
+                              </div>
+                            }
                             </div>
+                          </div>
+                            
                         ))
                     }
                 </div>

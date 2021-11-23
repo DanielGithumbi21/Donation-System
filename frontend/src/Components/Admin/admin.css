@@ -4,10 +4,12 @@
     width: 80%;
 }
 .admin .card {
-    padding: 30px;
+    padding: 20px;
     background-color: rgb(26, 25, 25);
     border-width: 2px;
     border-color: blue;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 .admin .card h5 {
     margin-bottom: 40px !important;
