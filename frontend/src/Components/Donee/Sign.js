@@ -79,19 +79,19 @@ const DoneeSign = () => {
                 <form onSubmit={onSubmit} >
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Name</label>
-                    <input onChange={handleChange} type="text" name="donee" className="form-control" id="exampleFormControlInput1" placeholder="john doe"/>
+                    <input onChange={handleChange} type="text" required name="donee" className="form-control" id="exampleFormControlInput1" placeholder="john doe"/>
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                    <input onChange={handleChange} type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                    <input onChange={handleChange} type="email" required name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Telephone</label>
-                    <input onChange={handleChange} type="text" name="telephone" className="form-control" id="exampleFormControlInput1" placeholder="your phone number"/>
+                    <input onChange={handleChange} type="text" required name="telephone" className="form-control" id="exampleFormControlInput1" placeholder="your phone number"/>
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Password</label>
-                    <input onChange={handleChange} type="password" name="password" className="form-control" id="exampleFormControlInput1" />
+                    <input onChange={handleChange} type="password" required name="password" className="form-control" id="exampleFormControlInput1" />
                 </div>
                 {
                     isLoading?
@@ -111,11 +111,11 @@ const DoneeSign = () => {
             <form onSubmit={onSubmit} >
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                <input onChange={handleChange} type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                <input onChange={handleChange} type="email" required name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Password</label>
-                <input onChange={handleChange} type="password" name="password" className="form-control" id="exampleFormControlInput1" />
+                <input onChange={handleChange} type="password" required name="password" className="form-control" id="exampleFormControlInput1" />
             </div>
             {
                     isLoading?

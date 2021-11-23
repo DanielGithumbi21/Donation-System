@@ -1,14 +1,29 @@
 import React,{useEffect,useState} from 'react'
 import { useLocation,useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import "../Donee/Sign.css"
+import AdminNavbar from './Navbar';
 
-const AdminSign = () => {
-    const initialState = {donee:'',email:'',telephone:'',password:''}
+const UpdateDonor = () => {
+    const initialState = {donor:'',email:''}
     const [isLoading,setIsLoading] = useState(false)
     const [formData, setFormData] = useState(initialState)
     const [errors,setErrors] = useState();
     const history = useHistory ();
-    
+    const location = useLocation ();
+
+    const [donorId,setDonorId] = useState(JSON.parse(localStorage.getItem('admindonorid')));
+    const [donorName,setDonorName] = useState(JSON.parse(localStorage.getItem('admindonorname')));
+    const [donorEmail,setDonorEmail] = useState(JSON.parse(localStorage.getItem('admindonoremail')));
+
+
+    useEffect (() => {
+        setDonorId(JSON.parse(localStorage.getItem('admindonorid')))
+        setDonorName(JSON.parse(localStorage.getItem('admindonorname')))
+        setDonorEmail(JSON.parse(localStorage.getItem('admindonoremail')))
+
+
+    },[location])
+
     const handleChange =(e) => {
         setFormData({...formData,[e.target.name]:e.target.value})
     }
@@ -17,8 +32,8 @@ const AdminSign = () => {
         e.preventDefault()
         
             setIsLoading(true)
-            fetch ("http://localhost:5000/api/admin/login", {
-                method:"POST",
+            fetch (`http://localhost:5000/api/admin/donor/${donorId.id}`, {
+                method:"PATCH",
                 headers:{
                     'Content-Type':'application/json'
                 },
@@ -27,21 +42,14 @@ const AdminSign = () => {
             .then(res => res.json())
             .then(json => {
                 console.log("json",json)
-                if (json.message) {
-                    setErrors(json.message)
-                    
-                        
-                
-                } else {
-                    localStorage.setItem("adminprofile",JSON.stringify({json}))
-                    history.push("/admin/home")
-                }
+                    history.push("/admin/donors")
             })
        
         
     }
     return (
         <div>
+            <AdminNavbar/>
             <div className="container sign">
             {errors?
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -50,19 +58,19 @@ const AdminSign = () => {
           </div>
             :""}
               <div className="card">
-                  <h5 className="mb-3">Admin Login</h5>
+                  <h5 className="mb-3">Donor Update</h5>
                   <form onSubmit={onSubmit} >
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                    <input onChange={handleChange} type="email" name="email" required className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                    <input onChange={handleChange} type="email" name="email" required className="form-control" id="exampleFormControlInput1"  placeholder={donorEmail.email}/>
                 </div>
                 <div className="mb-3">
-                    <label for="exampleFormControlInput1" className="form-label">Password</label>
-                    <input onChange={handleChange} type="password" name="password" required className="form-control" id="exampleFormControlInput1" />
+                    <label for="exampleFormControlInput1" className="form-label">Donor</label>
+                    <input onChange={handleChange} type="text" name="donor" required  className="form-control" id="exampleFormControlInput1" placeholder={donorName.name} />
                 </div>
             
                 <div className="text-center">
-                <button className="btn btn-md btn-outline-primary">Login</button>
+                <button className="btn btn-md btn-outline-primary">Update</button>
                 </div>
                 </form>
               </div> 
@@ -71,4 +79,4 @@ const AdminSign = () => {
     )
 }
 
-export default AdminSign
+export default UpdateDonor

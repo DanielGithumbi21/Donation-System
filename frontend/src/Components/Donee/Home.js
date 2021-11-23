@@ -27,6 +27,8 @@ const DoneeHome = () => {
         e.preventDefault ()
         axios.post (`http://localhost:5000/api/donee/request/${user.json.result._id}`,post)
         .then((data) => console.log(data))
+        alert("Send the donation request about",formData.title)
+        history.go(0)
     }
     return (
         <div>

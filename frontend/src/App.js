@@ -2,10 +2,6 @@ import React,{ useEffect,Suspense,lazy } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import {keepTheme} from './utils/themes'
-import AdminSign from './Components/Admin/Sign';
-import AdminHome from './Components/Admin/home';
-import AdminDonors from './Components/Admin/donors';
-import AdminDonees from './Components/Admin/Donee';
 
 
 function App() {
@@ -15,6 +11,13 @@ function App() {
   const DonorSign = lazy (() => import ('./Components/Donor/Sign'))
   const DoneeHome = lazy (() => import ('./Components/Donee/Home'))
   const DonorHome = lazy (() => import ('./Components/Donor/Home'))
+  const AdminSign = lazy (() => import ('./Components/Admin/Sign'))
+  const AdminHome = lazy (() => import ('./Components/Admin/home'))
+  const AdminDonations = lazy (() => import ('./Components/Admin/donations'))
+  const AdminDonors = lazy (() => import ('./Components/Admin/donors'))
+  const AdminDonees = lazy (() => import ('./Components/Admin/Donee'))
+  const UpdateDonor = lazy (() => import ('./Components/Admin/updateDonor'))
+  const UpdateDonee = lazy (() => import ('./Components/Admin/updateDonee'))
 
 
   useEffect (() => {
@@ -33,7 +36,9 @@ function App() {
        <Route path="/admin/home" component={AdminHome}/>
        <Route path="/admin/donors" component={AdminDonors}/>
        <Route path="/admin/donee" component={AdminDonees}/>
-
+       <Route path="/admin/donations" component={AdminDonations}/>
+       <Route path="/admin/update-donor" component={UpdateDonor}/>
+       <Route path="/admin/update-donee" component={UpdateDonee}/>
        </Suspense>
      </Router>
      

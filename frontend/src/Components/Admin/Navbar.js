@@ -84,7 +84,7 @@ const AdminNavbar = () => {
                             <a className="nav-link" href="/admin/donee">DONEES</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link disabled">DONATIONS</a>
+                            <a className="nav-link " href="/admin/donations" >DONATIONS</a>
                             </li>
                             {/* <li className="nav-item">
                                 <h6 className="nav-link">Welcome, {user.json.result.donee}</h6>

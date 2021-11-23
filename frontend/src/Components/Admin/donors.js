@@ -1,7 +1,10 @@
+import axios from 'axios'
 import React,{ useState,useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import AdminNavbar from './Navbar'
 
 const AdminDonors = () => {
+    const history = useHistory()
     const [donorData,setDonorData] = useState ([])
 
     useEffect (() => {
@@ -13,6 +16,17 @@ const AdminDonors = () => {
         const result = await response.json ()
         setDonorData(result)
         console.log(result)
+    }
+    const onDelete = (id) => {
+        axios.delete( `http://localhost:5000/api/admin/donor/${id}`)
+        alert("Confirm deletion of this account")
+        history.go(0)
+    }
+    const onUpdate = (id,name,email) => {
+        localStorage.setItem("admindonorid",JSON.stringify({id}))
+        localStorage.setItem("admindonorname",JSON.stringify({name}))
+        localStorage.setItem("admindonoremail",JSON.stringify({email}))
+        history.push("/admin/update-donor")
     }
     return (
         <div>
@@ -38,10 +52,10 @@ const AdminDonors = () => {
                 <td>
                     <div style={{display:"flex"}}>
                     <div className="m-2">
-                        <div className="btn btn-md btn-outline-info">Update</div>
+                        <div className="btn btn-md btn-outline-info" onClick={(() => onUpdate(donor._id,donor.donor,donor.email))} >Update</div>
                     </div>
                     <div className="m-2">
-                        <div className="btn btn-md btn-outline-danger">Delete</div>
+                        <div className="btn btn-md btn-outline-danger" onClick={(() => onDelete(donor._id))} >Delete</div>
                     </div>
                     </div>
                     

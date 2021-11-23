@@ -1,7 +1,10 @@
 import React,{ useState,useEffect } from 'react'
 import AdminNavbar from './Navbar'
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const AdminDonees = () => {
+    const history = useHistory ()
     const [doneeData,setDoneeData] = useState ([])
 
     useEffect (() => {
@@ -13,6 +16,17 @@ const AdminDonees = () => {
         const result = await response.json ()
         setDoneeData(result)
         console.log(result)
+    }
+    const onDelete = (id) => {
+        axios.delete( `http://localhost:5000/api/admin/donee/${id}`)
+        alert("Confirm deletion of this account")
+        history.go(0)
+    }
+    const onUpdate = (id,name,email) => {
+        localStorage.setItem("admindoneeid",JSON.stringify({id}))
+        localStorage.setItem("admindoneename",JSON.stringify({name}))
+        localStorage.setItem("admindoneeemail",JSON.stringify({email}))
+        history.push("/admin/update-donee")
     }
     return (
         <div>
@@ -29,19 +43,19 @@ const AdminDonees = () => {
                 </tr>
             </thead>
             {
-                doneeData.map(donor => (
+                doneeData.map(donee => (
                     <tbody>
                 <tr>
-                <td>{donor.donee}</td>
-                <td>{donor.email}</td>
-                <td>{donor.telephone}</td>
+                <td>{donee.donee}</td>
+                <td>{donee.email}</td>
+                <td>{donee.telephone}</td>
                 <td>
                     <div style={{display:"flex"}}>
                     <div className="m-2">
-                        <div className="btn btn-md btn-outline-info">Update</div>
+                        <div className="btn btn-md btn-outline-info" onClick={(() => onUpdate(donee._id,donee.donee,donee.email))}>Update</div>
                     </div>
                     <div className="m-2">
-                        <div className="btn btn-md btn-outline-danger">Delete</div>
+                        <div className="btn btn-md btn-outline-danger" onClick={(() => onDelete (donee._id))} >Delete</div>
                     </div>
                     </div>
                     
