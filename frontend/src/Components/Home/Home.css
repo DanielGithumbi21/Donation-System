@@ -1,11 +1,13 @@
 
 .home {
     text-align: center;
-    margin-top: 14%;
-    width: 50%;
+    margin-top: 5%;
+    width: 80%;
 }
-.home .btn {
-    color: green;
+.home .card {
+    border-color: aquamarine;
+    border-width: 2px;
+    background-color: transparent;
 }
 @media screen and (max-width:920px) {
     .home {

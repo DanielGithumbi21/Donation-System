@@ -32,3 +32,38 @@ body {
         width: 100%;
     }
 }
+.donee-home {
+    margin-top: 2%;
+    padding: 20px !important;
+    width: 80%;
+}
+.testimonials {
+    margin-top: 30px;
+}
+.testimonials .card {
+    padding: 20px;
+    background-color: transparent;
+    border-width: 2px;
+    border-color: green;
+}
+.testimonials blockquote {
+    color: rgb(156, 231, 225);
+}
+.page-footer {
+    margin-top: 40px;
+    padding: 20px;
+}
+.page-footer h5 {
+    color: rgb(228, 148, 0);
+    margin-bottom: 20px;
+}
+.page-footer h6 {
+    margin-top: 20px;
+}
+.page-footer a {
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+.page-footer a i {
+    font-size: 20px;
+}

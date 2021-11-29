@@ -75,13 +75,16 @@ const DoneeNavbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">ABOUT US</a>
+                            <a className="nav-link active" aria-current="page" href="/donee/home">Home</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">DONATIONS</a>
+                            <a className="nav-link" href="/donee/request">Donation Request</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link disabled">CONTRIBUTIONS</a>
+                            <a className="nav-link " href="/donee/request">Requests made</a>
+                            </li>
+                            <li className="nav-item">
+                            <a className="nav-link " href="#">Requests accepted</a>
                             </li>
                             <li className="nav-item">
                                 <h6 className="nav-link">Welcome, {user.json.result.donee}</h6>
@@ -91,7 +94,6 @@ const DoneeNavbar = () => {
                         <li style={{listStyleType:"none"}}>
                             <button className='btn btn-outline-danger btn-md' onClick={onClick}>Logout</button>
                         </li>
-                        <li style={{listStyleType:"none"}}><Toggle/></li>
                         
                         </div>
                     </div>

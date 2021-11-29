@@ -5,9 +5,38 @@ const Home = () => {
         <>
                <Navbar/>
         <div className="container home">
-            <h4 className="mb-4">Helping Hand</h4>
-            <h6 className="mb-4">Make an Impact in Someone's Life Today</h6>
-            <button className="btn btn-outline-info">See Donation Menu</button>
+            <div className="row padding">
+                <div className="col-lg-4 col-sm-12 col-md-4">
+                <div className="card">
+                <img src="https://images.pexels.com/photos/8042425/pexels-photo-8042425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="..."/>
+                    <div className="card-body">
+                        <h5 className="card-title">Donations</h5>
+                        <p className="card-text">View made donation requests.</p>
+                        <a href="#" className="btn btn-primary">Donations</a>
+                    </div>
+                </div>
+                </div>
+                <div className="col-lg-4">
+                <div className="card" >
+                <img src="https://images.pexels.com/photos/6647111/pexels-photo-6647111.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="..."/>
+                    <div className="card-body">
+                        <h5 className="card-title">Donors</h5>
+                        <p className="card-text">Register as a donor and join the community helping out.</p>
+                        <a href="#" className="btn btn-primary">Register</a>
+                    </div>
+                </div>
+                </div>
+                <div className="col-lg-4">
+                <div className="card" >
+                <img src="https://images.pexels.com/photos/6646847/pexels-photo-6646847.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="..."/>
+                    <div className="card-body">
+                        <h5 className="card-title">Donees</h5>
+                        <p className="card-text">Register as a donee and make a donation request.</p>
+                        <a href="#" className="btn btn-primary">Donee</a>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
         </>
 

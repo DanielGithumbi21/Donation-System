@@ -2,6 +2,7 @@ import React,{ useEffect,Suspense,lazy } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import {keepTheme} from './utils/themes'
+import MakeRequest from './Components/Donee/request';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const DoneeSign = lazy (() => import ('./Components/Donee/Sign'))
   const DonorSign = lazy (() => import ('./Components/Donor/Sign'))
   const DoneeHome = lazy (() => import ('./Components/Donee/Home'))
+  const MakeRequest = lazy (() => import ('./Components/Donee/request'))
   const DonorHome = lazy (() => import ('./Components/Donor/Home'))
   const AdminSign = lazy (() => import ('./Components/Admin/Sign'))
   const AdminHome = lazy (() => import ('./Components/Admin/home'))
@@ -30,6 +32,7 @@ function App() {
        <Route path="/" exact component={Home}/>
        <Route path="/donee/sign" exact component={DoneeSign}/>
        <Route path="/donee/home" exact component={DoneeHome}/>
+       <Route path="/donee/request"  component={MakeRequest}/>
        <Route path="/donor/sign" component={DonorSign}/>
        <Route path="/donor/home" component={DonorHome}/>
        <Route path="/admin" exact component={AdminSign}/>
