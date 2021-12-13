@@ -1,7 +1,8 @@
+
 .admin {
-    margin-top: 2%;
     padding: 20px !important;
     width: 80%;
+    color: #c5c6c7;
 }
 .admin .card {
     padding: 20px;
@@ -13,4 +14,26 @@
 }
 .admin .card h5 {
     margin-bottom: 40px !important;
+}
+.charts {
+    padding: 2opx;
+    margin-top: 4%;
+}
+.charts .count {
+    height:100px;
+    text-align: center;
+    padding: 20px;
+    border-width: 2px;
+    border-color: rgb(119, 196, 119);
+    color: rgb(87, 0, 114);
+    margin-bottom: 50px;
+}
+.charts .graph {
+    text-align: center;
+    padding: 20px;
+    border-width: 2px;
+    border-color: rgb(119, 196, 119);
+    color: rgb(3, 85, 85);
+    margin-bottom: 50px;
+    background-color: rgb(214, 240, 247);
 }

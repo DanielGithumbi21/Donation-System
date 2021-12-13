@@ -1,0 +1,30 @@
+.donor-home {
+    background-color: rgb(72, 204, 149);
+    margin-top: 20px;
+    padding: 20px;
+}
+.social-icons {
+    margin-top: 12%;
+    margin-bottom: 50px;
+    color: red;
+    padding-left: 10px;
+    margin-left: 30px;
+}
+.social-icons i {
+    padding-left: 20px;
+    font-size: 30px;
+}
+.heading-2 {
+    margin-top: 8%;
+    margin-bottom: 50px;
+    color: rgb(38, 0, 255);
+    margin-left: 30px;
+}
+.donor-home .btn {
+    margin-left: 30px;
+
+}
+
+.donor-home img {
+    border-radius: 20px;
+}

@@ -1,15 +1,18 @@
 .navbar {
    padding: 30px;
+   background-color: transparent !important;
 }
 .navbar-nav {
-    margin-left: 8%;
+    margin-left: 20%;
 }
 .nav-item a {
-    color: rgb(45, 218, 145) !important;
+    color: #66fcf1 !important;
 }
 .nav-item  {
     padding-left: 40px;
 }
 .navbar-brand {
-    color: rgb(45, 218, 145) !important;
+    color: #950740 !important;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

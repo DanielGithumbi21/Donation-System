@@ -1,56 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "../Navbar/Navbar.css"
-import '../Navbar/toggle.css';
-import { setTheme } from '../../utils/themes';
 
-function Toggle() {
-    const [togClass, setTogClass] = useState('dark');
-    let theme = localStorage.getItem('theme');
-
-    const handleOnClick = () => {
-        if (localStorage.getItem('theme') === 'theme-dark') {
-            setTheme('theme-light');
-            setTogClass('light')
-        } else {
-            setTheme('theme-dark');
-            setTogClass('dark')
-        }
-    }
-
-    useEffect(() => {
-        if (localStorage.getItem('theme') === 'theme-dark') {
-            setTogClass('dark')
-        } else if (localStorage.getItem('theme') === 'theme-light') {
-            setTogClass('light')
-        }
-    }, [theme])
-
-    return (
-        <div className="container--toggle">
-            {
-                togClass === "light" ?
-                <>
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" onClick={handleOnClick} value="" id="flexCheckDefault" checked/>
-                    <label class="form-check-label" for="flexCheckDefault">
-                        <h5>Light Theme</h5>
-                    </label>
-                    </div>
-                </>
-                :
-                <>
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" onClick={handleOnClick} value="" id="flexCheckDefault"/>
-                    <label class="form-check-label" for="flexCheckDefault">
-                        <h5>Dark Theme</h5>
-                    </label>
-                    </div>
-            </>
-            }
-        </div>
-    )
-}
 
 const DonorNavbar = () => {
     const location = useLocation();
@@ -75,13 +26,13 @@ const DonorNavbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">ABOUT US</a>
+                            <a className="nav-link active" aria-current="page" href="/donor/home">Home</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">DONATIONS</a>
+                            <a className="nav-link" href="/donor/donations">Requests</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link disabled">CONTRIBUTIONS</a>
+                            <a className="nav-link" href="/join">Chat</a>
                             </li>
                             <li className="nav-item">
                                 <h6 className="nav-link">Welcome, {user.json.result.donor}</h6>
@@ -90,7 +41,6 @@ const DonorNavbar = () => {
                         <li style={{listStyleType:"none"}}>
                             <button className='btn btn-outline-danger btn-md' onClick={onClick}>Logout</button>
                         </li>
-                        <li style={{listStyleType:"none"}}><Toggle/></li>
                         
                         </div>
                     </div>

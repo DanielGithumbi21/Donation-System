@@ -32,7 +32,7 @@ const AdminDonors = () => {
         <div>
             <AdminNavbar/>
             <div className="container mt-5">
-            <h5 className="text-center mb-4">Registered Donors</h5>
+            <h5 className="text-center text-info mb-4">Registered Donors</h5>
             <table class="table table-dark">
             <thead>
                 <tr>
