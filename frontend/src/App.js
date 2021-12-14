@@ -22,6 +22,7 @@ function App() {
   const Chat = lazy (() => import ('./Components/chat/Chat'))
   const Join = lazy (() => import ('./Components/chat/Join'))
   const Dashboard = lazy (() => import ('./Components/Admin/Dashboard'))
+  const AcceptedRequests = lazy (() => import ('./Components/Donee/AcceptedRequests'))
 
 
   return (
@@ -32,6 +33,7 @@ function App() {
        <Route path="/donee/sign" exact component={DoneeSign}/>
        <Route path="/donee/home" exact component={DoneeHome}/>
        <Route path="/donee/request"  component={MakeRequest}/>
+       <Route path="/donee/accepted-requests"  component={AcceptedRequests}/>
        <Route path="/donor/sign" component={DonorSign}/>
        <Route path="/donor/home" component={DonorHome}/>
        <Route path="/donor/donations" component={DonationsMade}/>

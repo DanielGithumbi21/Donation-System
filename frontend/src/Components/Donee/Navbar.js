@@ -27,13 +27,13 @@ const DoneeNavbar = () => {
                             <a className="nav-link active" aria-current="page" href="/donee/home">Home</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="/donee/request">Donation Request</a>
+                            <a className="nav-link" href="/donee/request">Make Request</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link " href="/donee/request">Requests made</a>
+                            <a className="nav-link " href="/donee/accepted-requests">accepted requests</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link " href="#">Requests accepted</a>
+                            <a className="nav-link " href="/join">Chat</a>
                             </li>
                             <li className="nav-item">
                                 <h6 className="nav-link">Welcome, {user.json.result.donee}</h6>

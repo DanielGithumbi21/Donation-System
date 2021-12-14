@@ -2,6 +2,7 @@ import React from 'react'
 import DoneeNavbar from './Navbar'
 import Footer from './footer'
 import "./Sign.css"
+import { Link } from 'react-router-dom'
 
 const DoneeHome = () => {
    
@@ -9,44 +10,29 @@ const DoneeHome = () => {
         <div>
             <DoneeNavbar/>
             <div className="container donee-home">
-            {/* <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                    <img src="https://images.pexels.com/photos/6647111/pexels-photo-6647111.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+            <div className='banner-page'>
+            <div className="row padding">
+                    <div className='col-lg-6 col-md-6 col-sm-12'>
+                        <h2 className='heading-2'>--Helping Hand</h2>
+                        <Link to="/donee/request">
+                        <button className='btn btn-lg btn-warning'>Make Request</button>
+                        </Link>
+                        <div className='social-icons'>
+                            <i className='fa fa-whatsapp'></i>
+                            <i className='fa fa-twitter'></i>
+                            <i className='fa fa-facebook'></i>
+                            <i className='fa fa-instagram'></i>
+                            <Link to='/join'>
+                            <i className='fa fa-wechat'></i>
+                            </Link>
+                        </div>
+
                     </div>
-                    </div>
-                    <div className="carousel-item">
-                    <img src="https://images.pexels.com/photos/6646847/pexels-photo-6646847.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                    </div>
-                    <div className="carousel-item">
-                    <img src="https://images.pexels.com/photos/8042425/pexels-photo-8042425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="d-block w-100" alt="..."/>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
+                    <div className='col-lg-6'>
+                        <img class="img-fluid" src="https://images.pexels.com/photos/6646865/pexels-photo-6646865.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""/>
                     </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
-                </div> */}
+            </div>
                 <div className='container testimonials'>
                     <h5 className='text-center mb-5'>Testimonials from the members</h5>
                     <div className='row padding'>

@@ -14,13 +14,10 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">ABOUT US</a>
+                            <a className="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="#">DONATIONS</a>
-                            </li>
-                            <li className="nav-item">
-                            <a className="nav-link disabled">CONTRIBUTIONS</a>
+                            <a className="nav-link active" aria-current="page" href="/">About us</a>
                             </li>
                         </ul>
                         <li style={{listStyleType:"none"}} class="nav-item dropdown">

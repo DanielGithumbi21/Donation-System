@@ -93,7 +93,7 @@ const DonorSign = () => {
                 <button className="btn btn-md btn-primary mb-3">Register</button>
                 </div>
                 <div className="text-center">
-                <button className="btn btn-md btn-outline" onClick={switchmode}>Already have an account? click here to login</button>
+                <button className="btn btn-md btn-info" onClick={switchmode}>Already have an account? click here to login</button>
                 </div>
                 </form>
             </div>
@@ -111,7 +111,7 @@ const DonorSign = () => {
             <button className="btn btn-md btn-primary mb-3">Login</button>
             </div>
             <div className="text-center">
-            <button className="btn btn-md btn-outline" onClick={switchmode}>Don't have an account? click here to Register</button>
+            <button className="btn btn-md btn-info" onClick={switchmode}>Don't have an account? click here to Register</button>
             </div>
             </form>
         </div>}

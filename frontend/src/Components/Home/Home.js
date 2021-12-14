@@ -1,5 +1,6 @@
 import "./Home.css"
 import Navbar from "../Navbar/Navbar"
+import Footer from "../Donee/footer"
 const Home = () => {
     return (
         <>
@@ -11,8 +12,8 @@ const Home = () => {
                 <img src="https://images.pexels.com/photos/8042425/pexels-photo-8042425.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="..."/>
                     <div className="card-body">
                         <h5 className="card-title">Donations</h5>
-                        <p className="card-text">View made donation requests.</p>
-                        <a href="#" className="btn btn-primary">Donations</a>
+                        <p className="card-text">all donations are accepted.</p>
+                        <a href="/donor/sign" className="btn btn-primary">Donations</a>
                     </div>
                 </div>
                 </div>
@@ -22,7 +23,7 @@ const Home = () => {
                     <div className="card-body">
                         <h5 className="card-title">Donors</h5>
                         <p className="card-text">Register as a donor and join the community helping out.</p>
-                        <a href="#" className="btn btn-primary">Register</a>
+                        <a href="/donor/sign" className="btn btn-primary">Register</a>
                     </div>
                 </div>
                 </div>
@@ -32,12 +33,13 @@ const Home = () => {
                     <div className="card-body">
                         <h5 className="card-title">Donees</h5>
                         <p className="card-text">Register as a donee and make a donation request.</p>
-                        <a href="#" className="btn btn-primary">Donee</a>
+                        <a href="/donee/sign" className="btn btn-primary">Donee</a>
                     </div>
                 </div>
                 </div>
             </div>
         </div>
+        <Footer/>
         </>
 
     )

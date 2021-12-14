@@ -2,6 +2,7 @@
     margin-top: 2%;
     padding: 20px !important;
     width: 40%;
+    color: white;
 }
 .sign .card {
     padding: 30px;
@@ -10,14 +11,12 @@
 .sign .card h5 {
     margin-bottom: 40px !important;
 }
-body {
-    background-color: white;
-}
 
 .donation {
     width: 100%;
     margin-top: 30px;
     padding: 20px;
+    color: white;
 }
 .donation h5 {
     text-align: center;
@@ -36,9 +35,11 @@ body {
     margin-top: 2%;
     padding: 20px !important;
     width: 80%;
+    color: white;
 }
 .testimonials {
     margin-top: 30px;
+    color: white;
 }
 .testimonials .card {
     padding: 20px;
@@ -47,11 +48,11 @@ body {
     border-color: green;
 }
 .testimonials blockquote {
-    color: rgb(0, 0, 0);
-}
+color: white;}
 .page-footer {
     margin-top: 40px;
     padding: 20px;
+    color: white;
 }
 .page-footer h5 {
     color: rgb(228, 148, 0);
@@ -66,4 +67,35 @@ body {
 }
 .page-footer a i {
     font-size: 20px;
+}
+.banner-page {
+    background-color: rgb(72, 204, 149);
+    margin-top: 20px;
+    padding: 20px;
+}
+.social-icons {
+    margin-top: 12%;
+    margin-bottom: 50px;
+    color: red;
+    padding-left: 10px;
+    margin-left: 30px;
+}
+.social-icons i {
+    padding-left: 20px;
+    font-size: 30px;
+}
+.heading-2 {
+    margin-top: 8%;
+    margin-bottom: 50px;
+    color: rgb(38, 0, 255);
+    margin-left: 30px;
+}
+.banner-page .btn {
+    margin-left: 30px;
+    border-radius: 20px;
+
+}
+
+.banner-page img {
+    border-radius: 20px;
 }
