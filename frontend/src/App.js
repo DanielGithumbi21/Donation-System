@@ -10,7 +10,7 @@ function App() {
   const DonorSign = lazy (() => import ('./Components/Donor/Sign'))
   const DoneeHome = lazy (() => import ('./Components/Donee/Home'))
   const MakeRequest = lazy (() => import ('./Components/Donee/request'))
-  const DonorHome = lazy (() => import ('./Components/Donor/home'))
+  const DonorHome = lazy (() => import ('./Components/Donor/Home'))
   const AdminSign = lazy (() => import ('./Components/Admin/Sign'))
   const AdminHome = lazy (() => import ('./Components/Admin/home'))
   const AdminDonations = lazy (() => import ('./Components/Admin/donations'))
