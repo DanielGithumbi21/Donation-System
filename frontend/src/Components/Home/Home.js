@@ -1,10 +1,30 @@
 import "./Home.css"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Donee/footer"
+import image from "../../Assets/pexels-ksenia-chernaya-3965534.jpg"
+
 const Home = () => {
     return (
         <>
                <Navbar/>
+               <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={image} className="d-block w-100" alt="..."/>
+      <div className="carousel-caption d-none d-md-block">
+          <div className="badges">
+        <span class="badge bg-dark">help us to protect and save families and individuals<br/> affected by poverty and cannot be able to meet daily<br/> survival requirements</span>
+        </div>
+        <div className="left-badges">
+        <span className="badge bg-secondary"><h5>Become a</h5></span><br/>
+        <span className="badge bg-secondary"><h5>Donor</h5></span>
+        </div>
+        <h5>Helping Hand</h5>
+        <p>Touching people lives.</p>
+      </div>
+    </div>
+  </div>
+</div>
         <div className="container home">
             <div className="row padding">
                 <div className="col-lg-4 col-sm-12 col-md-4">

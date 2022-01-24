@@ -8,7 +8,7 @@
     border-color: aquamarine;
     border-width: 2px;
     background-color: transparent;
-    color: #c5c6c7;
+    color: black;
 }
 @media screen and (max-width:920px) {
     .home {
@@ -16,4 +16,33 @@
         margin-top: 50%;
         width: 70%;
     }
+}
+.carousel-inner img {
+    height: 600px;
+}
+.carousel-caption {
+    margin-bottom: 10%;
+    
+    
+}
+.carousel-caption h5 {
+    font-weight: 700;
+    font-size: 30px;
+    color: red;
+    text-align: left;
+}
+.carousel-caption p {
+    color: black;
+    font-size: 20px;
+    text-align: left;
+}
+.carousel-caption .badges {
+    text-align: right;
+    font-size: 20px;
+}
+.left-badges {
+    text-align: left;
+}
+.badge {
+    margin: 20px;
 }

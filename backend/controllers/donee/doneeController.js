@@ -87,7 +87,15 @@ exports.getRequest = (req, res, next) => {
 exports.makeRequest = async (req, res, next) => {
   try {
 
-    // let { title, description, donees } = req.body
+    let { title, description, donees } = req.body
+
+    if (!title) {
+      return res.json({message:"Title field cannot be empty"})
+    }
+    if (!description) {
+      return res.json({message:"Description field cannot be empty"})
+    }
+
     
     if(req.params.id != String(req.body.donee)) return res.json({ message: 'This Donee is not related to the donation request being made' })
 

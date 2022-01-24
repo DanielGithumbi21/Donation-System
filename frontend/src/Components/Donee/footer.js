@@ -17,7 +17,7 @@ const Footer = () => {
                     <p><a href='#'>united nations</a></p>
                     <p><a href='#'>U.S.A.I.D</a></p>
                 </div>
-                <div className='col-lg-4'>
+                <div className='col-lg-4 social-media'>
                     <h5>Social Media</h5>
                     <p><a href='#'><i className='fa fa-facebook-f'></i></a>   Facebook</p>
                     <p><a href='#'><i className='fa fa-twitter'></i></a>   Twitter</p>

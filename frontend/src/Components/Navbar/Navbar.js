@@ -40,6 +40,27 @@ const Navbar = () => {
                                 </Link>
                                 </li>
                             </ul>
+                        </li> 
+                        <li style={{listStyleType:"none"}} class="nav-item dropdown">
+                            <a className="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="d-flex">
+                            <Link to='/donor/sign'>
+                            <button className="btn btn-outline-success mb-2">Login</button>
+                            </Link>
+                            </div>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                <Link to='/donor/login'>
+                                    <button className="btn btn-primary m-2">Donor</button>
+                                </Link>
+                                </li>
+                                <li>
+                                <Link to='/donee/login'>
+                                    <button className="btn btn-primary m-2">Donee</button>
+                                </Link>
+                                </li>
+                            </ul>
                         </li>                        
                         </div>
                     </div>

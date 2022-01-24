@@ -2,7 +2,7 @@
     margin-top: 2%;
     padding: 20px !important;
     width: 40%;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .sign .card {
     padding: 30px;
@@ -16,7 +16,7 @@
     width: 100%;
     margin-top: 30px;
     padding: 20px;
-    color: white;
+    color: black;
 }
 .donation h5 {
     text-align: center;
@@ -39,20 +39,21 @@
 }
 .testimonials {
     margin-top: 30px;
-    color: white;
+    color: rgb(78, 70, 187);
 }
 .testimonials .card {
     padding: 20px;
     background-color: transparent;
     border-width: 2px;
     border-color: green;
+    height: 350px;
 }
 .testimonials blockquote {
-color: white;}
+color: black;}
 .page-footer {
     margin-top: 40px;
     padding: 20px;
-    color: white;
+    color: black;
 }
 .page-footer h5 {
     color: rgb(228, 148, 0);
@@ -79,6 +80,9 @@ color: white;}
     color: red;
     padding-left: 10px;
     margin-left: 30px;
+}
+.social-media {
+    color: red;
 }
 .social-icons i {
     padding-left: 20px;

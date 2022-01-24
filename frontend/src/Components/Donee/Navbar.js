@@ -36,7 +36,7 @@ const DoneeNavbar = () => {
                             <a className="nav-link " href="/join">Chat</a>
                             </li>
                             <li className="nav-item">
-                                <h6 className="nav-link">Welcome, {user.json.result.donee}</h6>
+                                <h6 className="nav-link" style={{color:"blue"}}>Welcome, {user.json.result.donee}</h6>
                             </li>
                             
                         </ul>

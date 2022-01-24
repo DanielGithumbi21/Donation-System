@@ -23,7 +23,8 @@ function App() {
   const Join = lazy (() => import ('./Components/chat/Join'))
   const Dashboard = lazy (() => import ('./Components/Admin/Dashboard'))
   const AcceptedRequests = lazy (() => import ('./Components/Donee/AcceptedRequests'))
-
+  const DonorLogin = lazy (() => import ('./Components/Donor/Login'))
+  const DoneeLogin = lazy (() => import ('./Components/Donee/Login'))
 
   return (
    <div>
@@ -31,10 +32,12 @@ function App() {
        <Suspense fallback = {<div>loading....</div>}>
        <Route path="/" exact component={Home}/>
        <Route path="/donee/sign" exact component={DoneeSign}/>
+       <Route path="/donee/login" exact component={DoneeLogin}/>
        <Route path="/donee/home" exact component={DoneeHome}/>
        <Route path="/donee/request"  component={MakeRequest}/>
        <Route path="/donee/accepted-requests"  component={AcceptedRequests}/>
        <Route path="/donor/sign" component={DonorSign}/>
+       <Route path="/donor/login" component={DonorLogin}/>
        <Route path="/donor/home" component={DonorHome}/>
        <Route path="/donor/donations" component={DonationsMade}/>
        <Route path="/admin" exact component={AdminSign}/>

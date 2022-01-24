@@ -35,7 +35,7 @@ const DonorNavbar = () => {
                             <a className="nav-link" href="/join">Chat</a>
                             </li>
                             <li className="nav-item">
-                                <h6 className="nav-link">Welcome, {user.json.result.donor}</h6>
+                                <h6 className="nav-link" style={{color:"blue"}} >Welcome, {user.json.result.donor}</h6>
                             </li>
                         </ul>
                         <li style={{listStyleType:"none"}}>

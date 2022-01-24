@@ -32,9 +32,9 @@ const DonationsMade = () => {
         <div>
             <DonorNavbar/>
             <div className="container admin">
-                {data.length ===0? <h5 className='text-center mt-3'>No verified donations for now</h5>:
+                {data.length ===0? <h5 className='text-center mt-3' style={{color:"black"}}>No verified donations for now</h5>:
                 <>
-                <h5 className='mb-5 text-center'>These are the verified donation requests</h5>
+                <h5 className='mb-5 text-center' style={{color:"black"}}>These are the verified donation requests</h5>
                 <div className="row" style ={{display:"flex"}}>
                     {
                         data.map (donation => (

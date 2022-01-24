@@ -6,7 +6,8 @@
     margin-left: 20%;
 }
 .nav-item a {
-    color: #66fcf1 !important;
+    color: rgb(117, 114, 98) !important;
+    font-size: 17px;
 }
 .nav-item  {
     padding-left: 40px;
